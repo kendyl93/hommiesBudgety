@@ -8,7 +8,7 @@ const PageNavigation = props => {
           <a href="/">Raporty</a>
         </li>
         <li>
-          <a href="/my-goups">Moje Grupy</a>
+          <a href="/my-groups">Moje Grupy</a>
         </li>
       </ul>
     </nav>
