@@ -6,6 +6,7 @@ import { Row, Col } from 'react-bootstrap';
 
 import Home from './Components/Home';
 import MyGroups from './Components/MyGroups';
+import MyAccount from './Components/MyAccount';
 import PageNavigation from './Components/PageNavigation';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
             <main>
               <Route path="/" exact component={Home} />
               <Route path="/my-groups" component={MyGroups} />
+              <Route path="/my-account" component={MyAccount} />
             </main>
           </Col>
         </Row>

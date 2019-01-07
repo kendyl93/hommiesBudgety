@@ -15,6 +15,9 @@ const PageNavigation = props => {
           <li>
             <Link to="/my-groups">My groups</Link>
           </li>
+          <li>
+            <Link to="/my-account">My account</Link>
+          </li>
         </ul>
       </nav>
     </Row>
