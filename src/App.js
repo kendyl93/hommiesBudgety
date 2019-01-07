@@ -3,10 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import './App.scss';
 import { Row, Col } from 'react-bootstrap';
-
-import Home from './Components/Home';
-import MyGroups from './Components/MyGroups';
-import MyAccount from './Components/MyAccount';
+import { Home, MyAccount, MyGroups } from './Components';
 import PageNavigation from './Components/PageNavigation';
 
 class App extends Component {
