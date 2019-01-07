@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AppCard from './AppCard';
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 const PageNavigation = props => {
   return (

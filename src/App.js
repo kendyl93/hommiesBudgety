@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import './App.css';
-import { Grid, Row, Col, Clearfix } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import Home from './Components/Home';
 import MyGroups from './Components/MyGroups';
