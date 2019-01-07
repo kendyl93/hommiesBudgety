@@ -23,20 +23,24 @@ main {
 .left-sidebar {
   padding: 32px 16px;
 }
-.left-sidebar .row {
-  margin: 0;
+.left-sidebar {
+  .row {
+    margin: 0;
+  }
 }
 .app-card-wrapper {
   display: flex;
   align-items: center;
   padding: 16px 0 32px;
-}
-.app-card-wrapper-img {
-  flex-grow: 1;
-}
-.app-card-wrapper-h1 {
-  flex-grow: 5;
-}
-.app-card-wrapper-h1 h1 {
-  font-size: 1.6rem;
+
+  .app-card-wrapper-img {
+    flex-grow: 1;
+  }
+  .app-card-wrapper-h1 {
+    flex-grow: 5;
+
+    > h1 {
+      font-size: 1.6rem;
+    }
+  }
 }
