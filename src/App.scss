@@ -1,6 +1,9 @@
 a {
+  transition: all 0.2s ease-out;
+
   &:hover {
     text-decoration: none;
+    color: #61dafb;
   }
 }
 
@@ -37,6 +40,7 @@ main {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 32px;
 }
 
 .App-logo {
