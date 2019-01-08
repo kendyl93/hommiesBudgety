@@ -1,7 +1,33 @@
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .app {
   height: 100%;
 }
+nav {
+  ul {
+    padding-left: 8px;
 
+    li {
+      list-style: none;
+      padding: 8px 0;
+
+      a {
+        display: flex;
+        align-content: center;
+        width: 100%;
+        color: #282c34;
+
+        span {
+          padding-left: 8px;
+        }
+      }
+    }
+  }
+}
 main {
   background-color: #282c34;
   min-height: 100vh;

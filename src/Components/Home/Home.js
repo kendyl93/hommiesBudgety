@@ -11,7 +11,7 @@ const Home = props => {
         <ul>
           <li>Add sparklines and some temporary data</li>
           <li>Add Avatar component</li>
-          <li>Fix nav and add some icons(https://feathericons.com/)</li>
+          <li>Fix nav at mobile devices</li>
         </ul>
       </p>
     </header>

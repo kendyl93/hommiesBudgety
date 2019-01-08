@@ -17,19 +17,19 @@ const PageNavigation = props => {
           <li>
             <Link to="/">
               <HomeIcon />
-              Home
+              <span>Home</span>
             </Link>
           </li>
           <li>
             <Link to="/my-groups">
               <GroupsIcon />
-              My groups
+              <span>My groups</span>
             </Link>
           </li>
           <li>
             <Link to="/my-account">
               <MyAccountIcon />
-              My account
+              <span>My account</span>
             </Link>
           </li>
         </ul>
