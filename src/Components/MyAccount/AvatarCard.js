@@ -1,14 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import Avatar from './Avatar';
+import { truncate } from '../../String';
 
 const AvatarCardBox = styled.div`
   width: 100%;
-  min-height: 100px;
-  background-color: red;
+  min-height: auto;
+  padding: 8px;
+  border-radius: 8px;
+  border: solid 1px transparent;
+  margin-bottom: 32px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border: solid 1px #ccc;
+    border-radius: 8px;
+  }
 `;
 const InlineBox = styled.div`
   display: inline-block;
+`;
+
+const UserName = styled.p`
+  font-size: 12px;
 `;
 
 const AvatarCard = props => {
@@ -17,10 +31,10 @@ const AvatarCard = props => {
   return (
     <AvatarCardBox>
       <InlineBox>
-        <Avatar src={AvatarUrl} userName={userName} size={8} />
+        <Avatar src={AvatarUrl} userName={userName} size={6} />
       </InlineBox>
       <InlineBox>
-        <h4>{userName}</h4>
+        <UserName>{truncate(userName, 20)}</UserName>
       </InlineBox>
     </AvatarCardBox>
   );

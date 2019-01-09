@@ -12,12 +12,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Row>
-            <Col sm={4} lg={3}>
+            <Col sm={4} lg={3} className="no-padding-right">
               <aside className="left-sidebar">
                 <PageNavigation />
               </aside>
             </Col>
-            <Col sm={8} lg={9}>
+            <Col sm={8} lg={9} className="no-padding-left">
               <main>
                 <Route path="/" exact component={Home} />
                 <Route path="/my-groups" component={MyGroups} />
