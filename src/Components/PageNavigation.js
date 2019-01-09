@@ -8,10 +8,15 @@ import {
   Settings as MyAccountIcon
 } from './icons';
 
+import AvatarCard from './MyAccount/AvatarCard';
+
+const DEFAULT_USER = 'Paweł Stanecki';
+
 const PageNavigation = props => {
   return (
     <Row>
       <AppCard />
+      <AvatarCard userName={DEFAULT_USER} />
       <nav>
         <ul>
           <li>

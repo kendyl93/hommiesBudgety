@@ -10,20 +10,22 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Row className="App">
-          <Col sm={4} lg={3}>
-            <aside className="left-sidebar">
-              <PageNavigation />
-            </aside>
-          </Col>
-          <Col sm={8} lg={9}>
-            <main>
-              <Route path="/" exact component={Home} />
-              <Route path="/my-groups" component={MyGroups} />
-              <Route path="/my-account" component={MyAccount} />
-            </main>
-          </Col>
-        </Row>
+        <div className="App">
+          <Row>
+            <Col sm={4} lg={3}>
+              <aside className="left-sidebar">
+                <PageNavigation />
+              </aside>
+            </Col>
+            <Col sm={8} lg={9}>
+              <main>
+                <Route path="/" exact component={Home} />
+                <Route path="/my-groups" component={MyGroups} />
+                <Route path="/my-account" component={MyAccount} />
+              </main>
+            </Col>
+          </Row>
+        </div>
       </BrowserRouter>
     );
   }
