@@ -40,7 +40,25 @@ const Home = props => {
       <h3>Todo:</h3>
       <div>
         <ul>
-          <li>Fix nav at mobile devices</li>
+          <li>[VIEW] Fix nav at mobile devices</li>
+          <li>
+            [VIEW] Add Simple data about income and outcome - in list(see budget
+            app in google)
+          </li>
+          <li>[VIEW] Add 'Add outcome/income' buttons</li>
+          <li>
+            [FUNCTIONALITY] Add Calendar support to generate current date and
+            add month/days to the sparklines
+          </li>
+          <li>
+            [VIEW] Add User Page - Some forms i.e. bank account number /
+            telephone number / name to display{' '}
+          </li>
+          <li>
+            [FUNCTIONALITY] Add possibility to press the logo of an app which
+            should be linked to the home page
+          </li>
+          <li>[INVESTIGATE] Investigate the folders structure</li>
         </ul>
       </div>
     </header>
