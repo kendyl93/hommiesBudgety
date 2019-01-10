@@ -12,7 +12,11 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Row>
-            <Col sm={4} lg={3} className="no-padding-right">
+            <Col
+              sm={4}
+              lg={3}
+              className="no-padding-right left-navbar-aside-wrapper"
+            >
               <aside className="left-sidebar">
                 <PageNavigation />
               </aside>

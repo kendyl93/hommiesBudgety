@@ -17,6 +17,9 @@ a {
 .app {
   height: 100%;
 }
+.left-navbar-aside-wrapper {
+  border-right: solid 1px #ccc;
+}
 nav {
   width: 100%;
 
@@ -46,14 +49,12 @@ nav {
   width: 100%;
 }
 main {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
   padding: 32px;
 }
 

@@ -1,13 +1,9 @@
 import React from 'react';
-import logo from '../../logo.svg';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import styled from 'styled-components';
 
 const SparkLineBox = styled.div`
-  width: 300px;
-  height: auto;
   padding-top: 16px;
-  margin: 16px;
   border: solid 1px #61dafb;
   border-radius: 3px;
 `;
@@ -20,14 +16,6 @@ const Home = props => {
           <SparklinesLine color="#61DAFB" />
         </Sparklines>
       </SparkLineBox>
-      <SparkLineBox>
-        <Sparklines
-          data={[500, 102, 503, 25, 50, 10, 5, 204, 51, 300, 190, 90]}
-        >
-          <SparklinesLine color="#61DAFB" />
-        </Sparklines>
-      </SparkLineBox>
-      <img src={logo} className="App-logo" alt="logo" />
       <h1>Home Page</h1>
       <h3>Todo:</h3>
       <div>
