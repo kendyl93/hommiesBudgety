@@ -63,13 +63,15 @@ class PageNavigation extends Component {
 
     return (
       <Row>
-        <button id="menuButton" onClick={handleMenuButtonClick}>
-          {toggleMenu ? (
+        {toggleMenu ? (
+          <button id="menuButton" onClick={handleMenuButtonClick}>
             <CloseImage className="toggleNavbar" />
-          ) : (
+          </button>
+        ) : (
+          <button id="menuButton" onClick={handleMenuButtonClick}>
             <MenuIcon className="toggleNavbar" />
-          )}
-        </button>
+          </button>
+        )}
         <nav className="NavigationElements">
           <NavWrapper className="NavWrapper" hideNav={hideNav}>
             <NavigationElements />
