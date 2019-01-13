@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './App.scss';
 import { Row, Col } from 'react-bootstrap';
 import { Home, MyAccount, MyGroups } from './Components';
-import PageNavigation from './Components/PageNavigation';
+import PageNavigation from './Components/Navigation/PageNavigation';
 
 class App extends Component {
   render() {
