@@ -79,7 +79,6 @@ main {
   display: flex;
   width: 100%;
   align-items: center;
-  padding: 16px 0 32px;
 
   .app-card-wrapper-img {
     flex-grow: 1;
@@ -100,4 +99,7 @@ main {
   @include sm {
     display: none;
   }
+}
+#menuButton {
+  justify-content: flex-end;
 }

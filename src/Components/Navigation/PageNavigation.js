@@ -4,11 +4,20 @@ import { Row } from 'react-bootstrap';
 import NavigationElements from './NavigationElements';
 import { Menu as MenuIcon, X as CloseImage } from '../icons';
 import { toggleSlide } from './animation';
+import AppCard from '../AppCard';
 import styled from 'styled-components';
 
 const NavWrapper = styled.div`
   display: ${props => (props.hideNav ? 'none' : 'block')};
   overflow-y: ${props => (props.hideNav ? 'hidden' : 'visible !important')};
+`;
+
+const AppCardAndButgerBtnWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  @media (max-width: 425px) {
+    padding: 0 16px;
+  }
 `;
 
 class PageNavigation extends Component {
@@ -64,13 +73,19 @@ class PageNavigation extends Component {
     return (
       <Row>
         {toggleMenu ? (
-          <button id="menuButton" onClick={handleMenuButtonClick}>
-            <CloseImage className="toggleNavbar" />
-          </button>
+          <AppCardAndButgerBtnWrapper>
+            <AppCard />
+            <button id="menuButton" onClick={handleMenuButtonClick}>
+              <CloseImage className="toggleNavbar" />
+            </button>
+          </AppCardAndButgerBtnWrapper>
         ) : (
-          <button id="menuButton" onClick={handleMenuButtonClick}>
-            <MenuIcon className="toggleNavbar" />
-          </button>
+          <AppCardAndButgerBtnWrapper>
+            <AppCard />
+            <button id="menuButton" onClick={handleMenuButtonClick}>
+              <MenuIcon className="toggleNavbar" />
+            </button>
+          </AppCardAndButgerBtnWrapper>
         )}
         <nav className="NavigationElements">
           <NavWrapper className="NavWrapper" hideNav={hideNav}>

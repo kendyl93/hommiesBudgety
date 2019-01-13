@@ -5,7 +5,6 @@ import {
   Users as GroupsIcon,
   Settings as MyAccountIcon
 } from '../icons';
-import AppCard from '../AppCard';
 
 import AvatarCard from '../MyAccount/AvatarCard';
 
@@ -13,7 +12,6 @@ const DEFAULT_USER = 'Paweł Stanecki';
 
 const NavigationElements = () => (
   <div>
-    <AppCard />
     <AvatarCard userName={DEFAULT_USER} />
     <ul>
       <li>
