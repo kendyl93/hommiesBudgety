@@ -6,10 +6,9 @@ import { truncate } from '../../String';
 const AvatarCardBox = styled.div`
   width: 100%;
   min-height: auto;
-  padding: 8px;
+  padding: 16px 8px;
   border-radius: 8px;
   border: solid 1px transparent;
-  margin-bottom: 32px;
   text-align: left;
   transition: all 0.2s ease-in-out;
 
