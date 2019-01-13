@@ -4,20 +4,26 @@ import { Row } from 'react-bootstrap';
 import NavigationElements from './NavigationElements';
 import { Menu as MenuIcon, X as CloseImage } from '../icons';
 import { toggleSlide } from './animation';
+import styled from 'styled-components';
+
+const NavWrapper = styled.div`
+  display: ${props => (props.hideNav ? 'none' : 'block')};
+  overflow-y: ${props => (props.hideNav ? 'hidden' : 'visible !important')};
+`;
 
 class PageNavigation extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isMenuOpen: false
+      toggleMenu: false,
+      hideNav: undefined
     };
   }
 
   slideNavbar = () => {
     const menuButton = document.getElementById('menuButton');
-    const navigationToShow = '.NavigationElements';
-
+    const navigationToShow = '.NavWrapper';
     menuButton.addEventListener(
       'click',
       event => {
@@ -28,27 +34,46 @@ class PageNavigation extends Component {
   };
 
   componentDidMount() {
+    window.addEventListener('resize', this.resize.bind(this));
+    this.resize();
     this.slideNavbar();
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize.bind(this));
+    document.getElementById('menuButton').addEventListener(
+      'click',
+      event => {
+        toggleSlide(document.querySelector('.NavWrapper'));
+      },
+      false
+    );
+  }
+
+  resize() {
+    this.setState({ hideNav: window.innerWidth <= 525 ? true : false });
+  }
+
   render() {
-    const { isMenuOpen } = this.state;
+    const { toggleMenu, hideNav } = this.state;
 
     const handleMenuButtonClick = () => {
-      this.setState({ isMenuOpen: !isMenuOpen });
+      this.setState({ toggleMenu: !toggleMenu });
     };
 
     return (
       <Row>
         <button id="menuButton" onClick={handleMenuButtonClick}>
-          {isMenuOpen ? (
-            <CloseImage className="OpenMenu" />
+          {toggleMenu ? (
+            <CloseImage className="toggleNavbar" />
           ) : (
-            <MenuIcon className="OpenMenu" />
+            <MenuIcon className="toggleNavbar" />
           )}
         </button>
         <nav className="NavigationElements">
-          <NavigationElements />
+          <NavWrapper className="NavWrapper" hideNav={hideNav}>
+            <NavigationElements />
+          </NavWrapper>
         </nav>
       </Row>
     );
