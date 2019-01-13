@@ -42,6 +42,10 @@ const Home = props => {
         <ul>
           <li>[VIEW] Fix nav at mobile devices</li>
           <li>
+            [view] refactor the animation.js and scss files Please improove also
+            view of navbar
+          </li>
+          <li>
             [VIEW] Add Simple data about income and outcome - in list(see budget
             app in google)
           </li>
