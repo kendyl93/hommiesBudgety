@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import NavigationElements from './NavigationElements';
 import { Menu as MenuIcon, X as CloseImage } from '../icons';
-import { toggleNavbarSlide } from './animation';
+import { toggleSlide } from './animation';
 import AppCard from '../AppCard';
 import styled from 'styled-components';
 
 const NavWrapper = styled.div`
-  display: ${props => (props.hideNav ? 'none' : 'block')};
-  overflow-y: ${props => (props.hideNav ? 'hidden' : 'visible !important')};
+  display: ${props => (props.hideNav ? 'none' : 'block;')};
 `;
 
 const AppCardAndButgerBtnWrapper = styled.div`
@@ -36,30 +35,30 @@ class PageNavigation extends Component {
     menuButton.addEventListener(
       'click',
       event => {
-        toggleNavbarSlide(document.querySelector(navigationToShow));
+        toggleSlide(document.querySelector(navigationToShow));
       },
       false
     );
   };
 
   componentDidMount() {
-    window.addEventListener('resize', this.resize.bind(this));
-    this.resize();
+    window.addEventListener('resizeWindow', this.resizeWindow.bind(this));
+    this.resizeWindow();
     this.slideNavbar();
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.resize.bind(this));
-    document.getElementById('menuButton').addEventListener(
+    window.removeEventListener('resizeWindow', this.resizeWindow.bind(this));
+    document.getElementById('menuButton').removeEventListener(
       'click',
       event => {
-        toggleNavbarSlide(document.querySelector('.NavWrapper'));
+        toggleSlide(document.querySelector('.NavWrapper'));
       },
       false
     );
   }
 
-  resize() {
+  resizeWindow() {
     this.setState({ hideNav: window.innerWidth <= 525 ? true : false });
   }
 

@@ -1,63 +1,57 @@
-/**
- * getHeight - for elements with display:none
- */
-const getDomElementHeight = domElement => {
-  const domElement_style = window.getComputedStyle(domElement),
-    domElementDisplay = domElement_style.display,
-    domElementPosition = domElement_style.position,
-    domElementVisibility = domElement_style.visibility,
-    domElementMaxHeight = domElement_style.maxHeight
-      .replace('px', '')
-      .replace('%', '');
-
-  let elementHeight = 0;
+const getHeight = function(el) {
+  var el_style = window.getComputedStyle(el),
+    el_display = el_style.display,
+    el_position = el_style.position,
+    el_visibility = el_style.visibility,
+    el_max_height = el_style.maxHeight.replace('px', '').replace('%', ''),
+    wanted_height = 0;
 
   // if its not hidden we just return normal height
-  if (domElementDisplay !== 'none' && domElementMaxHeight !== '0') {
-    return domElement.offsetHeight;
+  if (el_display !== 'none' && el_max_height !== '0') {
+    return el.offsetHeight;
   }
 
   // the element is hidden so:
   // making the el block so we can meassure its height but still be hidden
-  domElement.style.position = 'absolute';
-  domElement.style.visibility = 'hidden';
-  domElement.style.display = 'block';
+  el.style.position = 'absolute';
+  el.style.visibility = 'hidden';
+  el.style.display = 'block';
 
-  elementHeight = domElement.offsetHeight;
+  wanted_height = el.offsetHeight;
 
   // reverting to the original values
-  domElement.style.display = domElementDisplay;
-  domElement.style.position = domElementPosition;
-  domElement.style.visibility = domElementVisibility;
-
-  return elementHeight;
+  el.style.display = el_display;
+  el.style.position = el_position;
+  el.style.visibility = el_visibility;
+  console.info({ wanted_height });
+  return wanted_height;
 };
 
 /**
  * toggleSlide mimics the jQuery version of slideDown and slideUp
  * all in one function comparing the max-heigth to 0
  */
-export const toggleNavbarSlide = element => {
-  let elementMaxHeight = 0;
+export const toggleSlide = function(el) {
+  var el_max_height = 0;
 
-  if (element.getAttribute('data-max-height')) {
+  if (el.getAttribute('data-max-height')) {
     // we've already used this before, so everything is setup
-    if (element.style.maxHeight.replace('px', '').replace('%', '') === '0') {
-      element.style.maxHeight = element.getAttribute('data-max-height');
+    if (el.style.maxHeight.replace('px', '').replace('%', '') === '0') {
+      el.style.maxHeight = el.getAttribute('data-max-height');
     } else {
-      element.style.maxHeight = '0';
+      el.style.maxHeight = '0';
     }
   } else {
-    elementMaxHeight = getDomElementHeight(element) + 'px';
-    element.style['transition'] = 'max-height 0.5s ease-in-out';
-    element.style.overflowY = 'hidden';
-    element.style.maxHeight = '0';
-    element.setAttribute('data-max-height', elementMaxHeight);
-    element.style.display = 'block';
+    el_max_height = getHeight(el) + 'px';
+    el.style['transition'] = 'max-height 0.5s ease-in-out';
+    el.style.overflowY = 'hidden';
+    el.style.maxHeight = '0';
+    el.setAttribute('data-max-height', el_max_height);
+    el.style.display = 'block';
 
     // we use setTimeout to modify maxHeight later than display (to we have the transition effect)
-    setTimeout(() => {
-      element.style.maxHeight = elementMaxHeight;
+    setTimeout(function() {
+      el.style.maxHeight = el_max_height;
     }, 10);
   }
 };
