@@ -12,7 +12,7 @@ import AvatarCard from '../MyAccount/AvatarCard';
 const DEFAULT_USER = 'Paweł Stanecki';
 
 const NavigationElements = () => (
-  <>
+  <div>
     <AppCard />
     <AvatarCard userName={DEFAULT_USER} />
     <ul>
@@ -35,7 +35,7 @@ const NavigationElements = () => (
         </Link>
       </li>
     </ul>
-  </>
+  </div>
 );
 
 export default NavigationElements;
