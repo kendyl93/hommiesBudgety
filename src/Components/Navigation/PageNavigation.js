@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import NavigationElements from './NavigationElements';
 import { Menu as MenuIcon, X as CloseImage } from '../icons';
-import { toggleSlide } from './animation';
+import { toggleNavbarSlide } from './animation';
 import AppCard from '../AppCard';
 import styled from 'styled-components';
 
@@ -36,7 +36,7 @@ class PageNavigation extends Component {
     menuButton.addEventListener(
       'click',
       event => {
-        toggleSlide(document.querySelector(navigationToShow));
+        toggleNavbarSlide(document.querySelector(navigationToShow));
       },
       false
     );
@@ -53,7 +53,7 @@ class PageNavigation extends Component {
     document.getElementById('menuButton').addEventListener(
       'click',
       event => {
-        toggleSlide(document.querySelector('.NavWrapper'));
+        toggleNavbarSlide(document.querySelector('.NavWrapper'));
       },
       false
     );
