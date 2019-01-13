@@ -40,6 +40,7 @@ const Home = props => {
       <h3>Todo:</h3>
       <div>
         <ul>
+          <li>[mobile to desktop] still broken toggle</li>
           <li>
             [VIEW] Add Simple data about income and outcome - in list(see budget
             app in google)
