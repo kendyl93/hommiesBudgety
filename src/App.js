@@ -5,6 +5,7 @@ import './App.scss';
 import { Row, Col } from 'react-bootstrap';
 import { Home, MyAccount, MyGroups } from './Components';
 import PageNavigation from './Components/Navigation/PageNavigation';
+import SlideNavigation from './Components/Navigation/SlideNavigation';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
               className="no-padding-right left-navbar-aside-wrapper"
             >
               <aside className="left-sidebar">
+                <SlideNavigation />
                 <PageNavigation />
               </aside>
             </Col>

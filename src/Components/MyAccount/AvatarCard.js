@@ -4,9 +4,9 @@ import Avatar from './Avatar';
 import { truncate } from '../../String';
 
 const AvatarCardBox = styled.div`
-  width: 100%;
   min-height: auto;
-  padding: 16px 8px;
+  margin: 16px 8px;
+  padding: 8px;
   border-radius: 8px;
   border: solid 1px transparent;
   text-align: left;
