@@ -6,12 +6,14 @@ import { Row, Col } from 'react-bootstrap';
 import { Home, MyAccount, MyGroups } from './Components';
 import PageNavigation from './Components/Navigation/PageNavigation';
 import SlideNavigation from './Components/Navigation/SlideNavigation';
+import Backdrop from './Components/Navigation/Backdrop';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
+          <Backdrop />
           <Row>
             <Col
               sm={4}

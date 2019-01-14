@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigationElements from './NavigationElements';
+
 import styled from 'styled-components';
 
 const SlideNavigationWrapper = styled.div`
@@ -8,7 +9,7 @@ const SlideNavigationWrapper = styled.div`
   background-color: white;
   position: fixed;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
-  z-index: 1;
+  z-index: 100;
   left: 0;
   top: 0;
 `;
