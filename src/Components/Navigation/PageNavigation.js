@@ -7,11 +7,13 @@ import AppCard from '../AppCard';
 
 class PageNavigation extends Component {
   render() {
+    const { slideNavigationHandler } = this.props;
     return (
       <Row>
         <AppCard />
-        <CloseImage />
-        <MenuIcon />
+        <button onClick={slideNavigationHandler}>
+          <MenuIcon />
+        </button>
         <nav className="NavigationElements">
           <NavigationElements />
         </nav>

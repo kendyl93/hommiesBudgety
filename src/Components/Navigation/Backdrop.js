@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const BackdropBox = styled.div`
@@ -11,6 +11,15 @@ const BackdropBox = styled.div`
   z-index: 10;
 `;
 
-const Backdrop = props => <BackdropBox />;
+class Backdrop extends Component {
+  render() {
+    const { backdropToggle } = this.props;
+    return (
+      <div onClick={backdropToggle}>
+        <BackdropBox />
+      </div>
+    );
+  }
+}
 
 export default Backdrop;

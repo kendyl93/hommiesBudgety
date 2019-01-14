@@ -9,11 +9,27 @@ import SlideNavigation from './Components/Navigation/SlideNavigation';
 import Backdrop from './Components/Navigation/Backdrop';
 
 class App extends Component {
+  state = { isSlideNavigationOpen: false };
+
+  slideNavigationHandler = () => {
+    this.setState(prevState => ({
+      isSlideNavigationOpen: !prevState.isSlideNavigationOpen
+    }));
+  };
+
+  backdropClickHandler = () => {
+    this.setState({ isSlideNavigationOpen: false });
+  };
+
   render() {
+    const { isSlideNavigationOpen } = this.state;
     return (
       <BrowserRouter>
         <div className="App">
-          <Backdrop />
+          {}
+          {isSlideNavigationOpen && (
+            <Backdrop backdropToggle={this.backdropClickHandler} />
+          )}
           <Row>
             <Col
               sm={4}
@@ -21,8 +37,10 @@ class App extends Component {
               className="no-padding-right left-navbar-aside-wrapper"
             >
               <aside className="left-sidebar">
-                <SlideNavigation />
-                <PageNavigation />
+                {isSlideNavigationOpen && <SlideNavigation />}
+                <PageNavigation
+                  slideNavigationHandler={this.slideNavigationHandler}
+                />
               </aside>
             </Col>
             <Col sm={8} lg={9} className="no-padding-left">
